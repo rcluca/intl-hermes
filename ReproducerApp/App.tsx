@@ -31,6 +31,10 @@ type SectionProps = PropsWithChildren<{
 
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  const formatter = new Intl.DateTimeFormat();
+  console.log(formatter.formatToParts(new Date()));
+
   return (
     <View style={styles.sectionContainer}>
       <Text
